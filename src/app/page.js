@@ -4,11 +4,16 @@ import { useEffect,useState} from "react";
 export default function Home() {
     const [contryFlags,setcontryFlags]=useState([]);
     useEffect(()=>{
-      const url="https://xcountries-backend.azurewebsites.net/all"
+      try {
+        const url="https://xcountries-backend.azurewebsites.net/all"
       axios.get(url).then((response)=>{
         console.log(response)
         setcontryFlags(response.data)
       })
+      } catch (error) {
+        console.log(error)
+      }
+      
        
     })
   return (

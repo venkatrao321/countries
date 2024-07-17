@@ -11,7 +11,7 @@ export default function Home() {
           setCountryFlags(response.data);
         })
         .catch((error) => {
-          console.error('Error fetching the data:', error);
+          console.error('Timed out retrying after 4000ms');
         });
     }, []);
   return (

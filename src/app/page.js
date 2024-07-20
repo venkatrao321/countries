@@ -10,9 +10,7 @@ export default function Home() {
           console.log(response);
           setCountryFlags(response.data);
         })
-        .catch((error) => {
-          console.error('Timed out retrying after 4000ms');
-        });
+        .catch((error) => console.error("Error fetching data:",error.message));
     }, []);
   return (
     <main className="flex min-h-screen items-center flex-wrap justify-between p-24">
